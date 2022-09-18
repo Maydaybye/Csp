@@ -1,4 +1,4 @@
-package 二零一七;
+package csp2017;
 
 import java.util.Scanner;
 
