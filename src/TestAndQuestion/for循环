@@ -1,0 +1,6 @@
+例如 int a;
+    int b=10;
+    for(a=0;b>0;b--){
+    System.out.println(a);
+    }
+    每次都会把a置为0。
