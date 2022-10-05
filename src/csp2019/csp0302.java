@@ -1,10 +1,10 @@
+/**
+ * 漏掉了连续减法的情况，直接扣了70分，要严谨
+ * 改了一下午
+ */
 package csp2019;
-
 import java.util.*;
-
 import static java.lang.Integer.parseInt;
-
-
 public class csp0302 {
     public static void main(String[] args){
         Scanner scanner=new Scanner(System.in);
@@ -17,31 +17,50 @@ public class csp0302 {
             input[i]=scanner.next();
         }
         scanner.close();
-
-        //计算
-
             for(int i=0;i<n;i++) {
-                while (index < input[index].length()) {
-                    //如果是数字
+                while (index < input[i].length()) {
                     if (input[i].charAt(index) <= '9' && input[i].charAt(index) >= '0') {
                         numStack.push(parseInt(input[i].substring(index, index + 1)));
-                    } else {
+                    }
+                    else if(input[i].charAt(index)=='+'){
                         opeStack.push(input[i].charAt(index));
                     }
-
+                    else if(input[i].charAt(index)=='-'){
+                        opeStack.push(input[i].charAt(index));
+                        numStack.push(-parseInt(input[i].substring(index+1,index+2)));
+                        index++;
+                    }
+                    else if(input[i].charAt(index)=='x'){
+                        numStack.push(numStack.pop()*parseInt(input[i].substring(index+1,index+2)));
+                        index++;
+                    }
+                    else {
+                        numStack.push(numStack.pop()/parseInt(input[i].substring(index+1,index+2)));
+                        index++;
+                    }
                     index++;
                 }
-                //输出第i次的判断结果。
+                int sum=0;
+                while(!numStack.isEmpty()){
 
-                //下一行输入，index要从0开始入栈。
+
+
+
+
+
+                            sum+=numStack.pop();
+
+
+                }
                 index=0;
+
+                if(sum==24){
+                    System.out.println("Yes");
+                }
+                else{
+                    System.out.println("No");
+                }
             }
-
-
-
-
-
-
 
 
 
