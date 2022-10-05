@@ -1,0 +1,11 @@
+栈在if()条件里判断时会弹出
+例如 Stack<Integer> a=new Stack<>();
+              a.push(1);
+              if(a.pop()==1){
+                  System.out.println("ye");
+              }
+此时再弹出就会抛出EmptyStackException
+可以用.peek()方法看栈顶元素。
+
+
+
