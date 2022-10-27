@@ -1,0 +1,7 @@
+· public static void main(String[] args) {
+        int a=0;
+        if(a==1);
+        System.out.println(a);
+
+}
+这里if(a==1);就不执行任何操作，也起不到选择的作用，是空语句。
