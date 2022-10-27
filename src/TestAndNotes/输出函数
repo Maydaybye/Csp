@@ -1,0 +1,4 @@
+println  自动换行
+print  不换行
+printf 格式控制
+System.out.print函数中直接给返回整形的变量后面+1会变成字符串连接
