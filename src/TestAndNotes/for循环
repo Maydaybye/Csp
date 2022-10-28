@@ -1,6 +1,27 @@
-例如 int a;
+**  例如 int a;
     int b=10;
     for(a=0;b>0;b--){
     System.out.println(a);
     }
     每次都会把a置为0。
+
+**  for(int b:record){
+                System.out.println(b);
+            }
+    把b当作一个载体，每次循环都会把数组中的值赋给b然后输出
+
+**  for(int i=1;i<n+1;i++){
+                if(i%7==0||i%10==7||i%100==7||i%1000==7){
+                    record[i%4-1]++;
+                    n++;
+
+                }
+                else{
+                    count++;
+                    System.out.print(count);
+                }
+                if(count==n){
+                    break;
+                }
+            }
+      for循环中的变量的值可以在循环体中修改
